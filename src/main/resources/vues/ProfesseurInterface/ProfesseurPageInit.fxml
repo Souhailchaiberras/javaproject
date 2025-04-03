@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Professeur.StatistiquesController" stylesheets="@dashboard.css">
+    <!-- Header Section -->
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="117.0" prefWidth="856.0" spacing="10.0" style="-fx-background-color: #2E3B4E; -fx-padding: 10;">
+            <ImageView fitHeight="87.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@logoensa.jpeg" />
+                </image>
+            </ImageView>
+            <Label fx:id="welcomeText" prefHeight="35.0" prefWidth="434.0" style="-fx-text-fill: white; -fx-font-size: 24px;" text="Bienvenue" />
+        </HBox>
+    </top>
+
+    <!-- Sidebar Section -->
+    <left>
+        <VBox alignment="TOP_LEFT" prefHeight="535.0" prefWidth="216.0" spacing="10.0" style="-fx-background-color: #1D2A3B; -fx-padding: 20;">
+            <Button onAction="#onStudentManagementButtonClick" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #3A4B63; -fx-text-fill: white;" text="Statistiques " />
+            <Button onAction="#onCoursesButtonClick" prefHeight="25.0" prefWidth="185.0" style="-fx-background-color: #3A4B63; -fx-text-fill: white;" text="Affichage Modules " />
+            <Button onAction="#onReportsButtonClick" prefHeight="25.0" prefWidth="185.0" style="-fx-background-color: #3A4B63; -fx-text-fill: white;" text="Listes Etudiants" />
+            <Button onAction="#onSettingsButtonClick" prefHeight="25.0" prefWidth="187.0" style="-fx-background-color: #3A4B63; -fx-text-fill: white;" text="Se Déconnecter " />
+        </VBox>
+    </left>
+
+    <!-- Content Area -->
+    <center>
+        <VBox alignment="CENTER" prefHeight="547.0" prefWidth="570.0" spacing="20.0" style="-fx-background-color: #F4F6F9; -fx-padding: 20;">
+            <!-- Statistiques du Professeur -->
+            <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #FFFFFF; -fx-padding: 10;">
+                <Label style="-fx-font-size: 18px; -fx-text-fill: #333;" text="Voici vos statistiques" />
+                <HBox spacing="15.0">
+                    <Label style="-fx-font-size: 16px;">Nombre d'étudiants :</Label>
+                    <Label fx:id="studentCountLabel" style="-fx-font-size: 16px; -fx-text-fill: #2E3B4E;" text="0" />
+                </HBox>
+                <HBox spacing="15.0">
+                    <Label style="-fx-font-size: 16px;">Modules assignés :</Label>
+                    <Label fx:id="modulesAssignedLabel" style="-fx-font-size: 16px; -fx-text-fill: #2E3B4E;" text="0" />
+                </HBox>
+                <HBox spacing="15.0">
+                    <Label style="-fx-font-size: 16px;">Dernière connexion :</Label>
+                    <Label fx:id="lastLoginLabel" style="-fx-font-size: 16px; -fx-text-fill: #2E3B4E;" text="N/A" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,14 @@
+/* styles.css */
+.chart {
+    -fx-background-color: #f4f6f9;
+    -fx-padding: 10px;
+    -fx-border-radius: 10px;
+}
+
+.pie-chart {
+    -fx-background-color: #ffffff;
+}
+
+.bar-chart {
+    -fx-background-color: #ffffff;
+}

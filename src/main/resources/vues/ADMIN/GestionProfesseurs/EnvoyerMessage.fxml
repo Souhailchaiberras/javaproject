@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.Admin.EnvoyerMessageController" stylesheets="@dashboard.css">
+    <!-- Header Section -->
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="117.0" prefWidth="856.0" spacing="10.0"
+              style="-fx-background-color: #2E3B4E; -fx-padding: 10;">
+            <ImageView fitHeight="87.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@logoensa.jpeg" />
+                </image>
+            </ImageView>
+            <Label prefHeight="35.0" prefWidth="434.0"
+                   style="-fx-text-fill: white; -fx-font-size: 24px;"
+                   text="Envoyer un Message" />
+        </HBox>
+    </top>
+
+    <!-- Sidebar Section -->
+    <left>
+        <VBox alignment="TOP_LEFT" prefHeight="535.0" prefWidth="216.0" spacing="10.0"
+              style="-fx-background-color: #1D2A3B; -fx-padding: 20;">
+            <Button onAction="#onStatistiqueButtonClick" prefHeight="25.0" prefWidth="184.0"
+                    style="-fx-background-color: #3A4B63; -fx-text-fill: white;"
+                    text="Statistiques" />
+            <Button onAction="#onGestiondesProfesseurButtonClick" prefHeight="25.0" prefWidth="185.0"
+                    style="-fx-background-color: #3A4B63; -fx-text-fill: white;"
+                    text="Gestion des Professeurs" />
+            <Button onAction="#onGestiondesSecretaireButtonClick" prefHeight="25.0" prefWidth="184.0"
+                    style="-fx-background-color: #3A4B63; -fx-text-fill: white;"
+                    text="Gestion des Secrétaires" />
+            <Button onAction="#onGestiondesEtudiantButtonClick" prefHeight="25.0" prefWidth="184.0"
+                    style="-fx-background-color: #3A4B63; -fx-text-fill: white;"
+                    text="Gestion des Étudiants" />
+            <Button onAction="#onGestiondesModulesButtonClick" prefHeight="25.0" prefWidth="184.0"
+                    style="-fx-background-color: #3A4B63; -fx-text-fill: white;"
+                    text="Gestion des Modules" />
+            <Button fx:id="logoutButton" onAction="#onDesconnected" prefHeight="25.0" prefWidth="184.0"
+                    style="-fx-background-color: #3A4B63; -fx-text-fill: white;"
+                    text="Se déconnecter" />
+        </VBox>
+    </left>
+
+    <!-- Content Area -->
+    <center>
+        <VBox alignment="CENTER" spacing="30.0"
+              style="-fx-background-color: #F4F6F9; -fx-padding: 20;">
+            <!-- Form for sending the message -->
+            <VBox fx:id="formContainer" alignment="CENTER" spacing="25"
+                  style="-fx-background-color: #ffffff; -fx-border-radius: 15px;
+                         -fx-padding: 30; -fx-pref-width: 400px; -fx-pref-height: 380px;
+                         -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 20, 0, 0, 15);
+                         -fx-background-color: #f9f9f9;">
+
+                <!-- Field for Email -->
+                <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-padding: 10;">
+                    <Label text="Email :"
+                           style="-fx-font-size: 16px; -fx-font-weight: bold;
+                                  -fx-pref-width: 100px; -fx-text-fill: #333333;" />
+                    <TextField fx:id="champEmailDestinataire"
+                               editable="false"
+                               prefWidth="250.0"
+                               style="-fx-border-radius: 10px; -fx-padding: 10px;
+                                      -fx-border-color: #ddd; -fx-font-size: 14px;
+                                      -fx-background-color: #f1f1f1;" />
+                </HBox>
+
+                <!-- Field for Message -->
+                <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-padding: 10;">
+                    <Label text="Message:"
+                           style="-fx-font-size: 16px; -fx-font-weight: bold;
+                                  -fx-pref-width: 100px; -fx-text-fill: #333333;" />
+                    <TextArea fx:id="champMessage"
+                              prefHeight="150.0"
+                              prefWidth="250.0"
+                              wrapText="true"
+                              style="-fx-border-radius: 10px; -fx-padding: 10px;
+                                     -fx-border-color: #ddd; -fx-font-size: 14px;
+                                     -fx-background-color: #fff;
+                                     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 10);" />
+                </HBox>
+
+                <!-- Buttons -->
+                <HBox alignment="CENTER" spacing="30" style="-fx-padding: 10;">
+                    <Button fx:id="sendButton" text="Envoyer"
+                            onAction="#envoyerMessage"
+                            style="-fx-background-color: #4CAF50; -fx-text-fill: white;
+                                   -fx-border-radius: 25px; -fx-padding: 10px 20px;
+                                   -fx-font-size: 16px; -fx-transition: 0.3s ease;"
+                            onMouseEntered="#onMouseEnterSendButton"
+                            onMouseExited="#onMouseExitSendButton" />
+                    <Button fx:id="cancelButton" text="Annuler"
+                            onAction="#onCancelButtonClick"
+                            style="-fx-background-color: #f44336; -fx-text-fill: white;
+                                   -fx-border-radius: 25px; -fx-padding: 10px 20px;
+                                   -fx-font-size: 16px; -fx-transition: 0.3s ease;"
+                            onMouseEntered="#onMouseEnterCancelButton"
+                            onMouseExited="#onMouseExitCancelButton" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

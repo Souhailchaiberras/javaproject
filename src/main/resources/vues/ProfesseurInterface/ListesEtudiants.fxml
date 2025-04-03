@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.Professeur.ProfesseurEtud" stylesheets="@dashboard.css">
+    <!-- Header Section -->
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="117.0" prefWidth="856.0" spacing="10.0" style="-fx-background-color: #2E3B4E; -fx-padding: 10;">
+            <!-- Image moved to the left corner and referenced from the resources folder -->
+            <ImageView fitHeight="87.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@logoensa.jpeg" />
+                </image>
+            </ImageView>
+            <Label prefHeight="35.0" prefWidth="434.0" style="-fx-text-fill: white; -fx-font-size: 24px;" text="Etudiants" />
+        </HBox>
+    </top>
+
+    <!-- Sidebar Section -->
+    <left>
+        <VBox alignment="TOP_LEFT" prefHeight="535.0" prefWidth="216.0" spacing="10.0" style="-fx-background-color: #1D2A3B; -fx-padding: 20;">
+            <Button onAction="#onStudentManagementButtonClick" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #3A4B63; -fx-text-fill: white;" text="Statistiques " />
+            <Button onAction="#onCoursesButtonClick" prefHeight="25.0" prefWidth="185.0" style="-fx-background-color: #3A4B63; -fx-text-fill: white;" text="Affichage Modules " />
+            <Button onAction="#onReportsButtonClick" prefHeight="25.0" prefWidth="185.0" style="-fx-background-color: #3A4B63; -fx-text-fill: white;" text="Listes Etudiants" />
+            <Button onAction="#onSettingsButtonClick" prefHeight="25.0" prefWidth="187.0" style="-fx-background-color: #3A4B63; -fx-text-fill: white;" text="Se Deconnecter " />
+        </VBox>
+    </left>
+
+    <!-- Content Area -->
+    <center>
+        <VBox alignment="CENTER" prefHeight="547.0" prefWidth="570.0" spacing="20.0" style="-fx-background-color: #F4F6F9; -fx-padding: 20;">
+            <Label fx:id="welcomeText" style="-fx-font-size: 20px;" text="Selectionner le Module ou chercher directement votre Etudiant" />
+
+            <!-- Module Selection -->
+            <ComboBox fx:id="moduleComboBox" onAction="#onModuleSelected" prefWidth="300.0" />
+
+            <!-- Example Table for Student Management Section -->
+            <TableView fx:id="studentTable" prefHeight="400" prefWidth="600">
+                <columns>
+                    <TableColumn fx:id="idColumn" text="ID" />
+                    <TableColumn fx:id="nameColumn" text="Nom" />
+                    <TableColumn fx:id="PrenomColumn" text="Prenom" />
+                </columns>
+            </TableView>
+
+            <!-- Action Buttons -->
+            <HBox alignment="CENTER" spacing="10">
+                <TextField fx:id="searchField" promptText="Search Student" style="-fx-padding: 10;" />
+                <Button onAction="#onSearchButtonClick" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Search" />
+                <Button  fx:id="generatePdfButton" onAction="#onGeneratePdfButtonClick" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Generate PDF" />
+            </HBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>

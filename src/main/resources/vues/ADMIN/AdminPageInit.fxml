@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.Admin.DashboardController"
+            stylesheets="@dashboard.css">
+
+    <!-- Header Section -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-background-color: #2E3B4E; -fx-padding: 10;" >
+            <ImageView fitHeight="87.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@logoensa.jpeg"/>
+                </image>
+            </ImageView>
+            <Label text="Welcome to the Dashboard" style="-fx-text-fill: white; -fx-font-size: 24px;"/>
+        </HBox>
+    </top>
+
+    <!-- Sidebar Section -->
+    <left>
+        <VBox alignment="TOP_LEFT" spacing="10" style="-fx-background-color: #1D2A3B; -fx-padding: 20;">
+            <Button text="Statistiques" onAction="#onStatistiqueButtonClick"
+                    style="-fx-background-color: #3A4B63; -fx-text-fill: white;"/>
+            <Button text="Gestion Des Professeurs" onAction="#onGestiondesProfesseurButtonClick"
+                    style="-fx-background-color: #3A4B63; -fx-text-fill: white;"/>
+            <Button text="Gestion Des Secretaires" onAction="#onGestiondesSecretaireButtonClick"
+                    style="-fx-background-color: #3A4B63; -fx-text-fill: white;"/>
+            <Button text="Gestion Des Etudiants" onAction="#onGestiondesEtudiantButtonClick"
+                    style="-fx-background-color: #3A4B63; -fx-text-fill: white;"/>
+            <Button text="Gestion Des Modules" onAction="#onGestiondesModulesButtonClick"
+                    style="-fx-background-color: #3A4B63; -fx-text-fill: white;"/>
+            <Button text="Se déconnecter" onAction="#onDesconnected"
+                    style="-fx-background-color: #3A4B63; -fx-text-fill: white;"/>
+        </VBox>
+    </left>
+
+    <!-- Content Section -->
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true">
+            <VBox spacing="20" style="-fx-padding: 20;">
+                <HBox spacing="20" alignment="CENTER">
+                    <VBox spacing="10" style="-fx-background-color: #3A4B63; -fx-padding: 20;">
+                        <Label text="Étudiants" style="-fx-text-fill: white;"/>
+                        <Label fx:id="studentCountLabel" text="0" style="-fx-text-fill: white;"/>
+                    </VBox>
+                    <VBox spacing="10" style="-fx-background-color: #3A4B63; -fx-padding: 20;">
+                        <Label text="Professeurs" style="-fx-text-fill: white;"/>
+                        <Label fx:id="professorCountLabel" text="0" style="-fx-text-fill: white;"/>
+                    </VBox>
+                    <VBox spacing="10" style="-fx-background-color: #3A4B63; -fx-padding: 20;">
+                        <Label text="Secrétaires" style="-fx-text-fill: white;"/>
+                        <Label fx:id="secretaryCountLabel" text="0" style="-fx-text-fill: white;"/>
+                    </VBox>
+                    <VBox spacing="10" style="-fx-background-color: #3A4B63; -fx-padding: 20;">
+                        <Label text="Modules" style="-fx-text-fill: white;"/>
+                        <Label fx:id="moduleCountLabel" text="0" style="-fx-text-fill: white;"/>
+                    </VBox>
+                </HBox>
+
+                <!-- Section for Charts -->
+                <VBox spacing="20" style="-fx-padding: 20;">
+
+                    <PieChart fx:id="studentModulePieChart" title="Distribution of Students per Module"/>
+
+
+                    <PieChart fx:id="professorModulePieChart" title="Distribution of Professors per Module"/>
+
+
+                    <BarChart fx:id="moduleBarChart" style="-fx-background-color: white;" title="Histogramme des étudiants et professeurs par module">
+                        <xAxis>
+                            <CategoryAxis fx:id="moduleCategoryAxis" />
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis fx:id="studentCountYAxis" />
+                        </yAxis>
+                    </BarChart>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

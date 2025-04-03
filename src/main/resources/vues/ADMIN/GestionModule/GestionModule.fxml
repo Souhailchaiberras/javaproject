@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.collections.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Admin.GestionModule" stylesheets="@dashboard.css">
+    <!-- Header Section -->
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="117.0" prefWidth="856.0" spacing="10.0" style="-fx-background-color: #2E3B4E; -fx-padding: 10;">
+            <ImageView fitHeight="87.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@logoensa.jpeg" />
+                </image>
+            </ImageView>
+            <Label prefHeight="35.0" prefWidth="434.0" style="-fx-text-fill: white; -fx-font-size: 24px;" text="Liste des Modules" />
+        </HBox>
+    </top>
+
+    <!-- Sidebar Section -->
+    <left>
+        <VBox alignment="TOP_LEFT" prefHeight="535.0" prefWidth="216.0" spacing="10.0" style="-fx-background-color: #1D2A3B; -fx-padding: 20;">
+            <Button onAction="#onStatistiqueButtonClick" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #3A4B63; -fx-text-fill: white;" text="Statistiques " />
+            <Button onAction="#onGestiondesProfesseurButtonClick" prefHeight="25.0" prefWidth="185.0" style="-fx-background-color: #3A4B63; -fx-text-fill: white;" text="Gestion Des Professeurs" />
+            <Button layoutX="30.0" layoutY="30.0" onAction="#onGestiondesSecretaireButtonClick" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #3A4B63; -fx-text-fill: white;" text="Gestion  Des Secretaires" />
+            <Button fx:id="logoutButton" layoutX="30.0" layoutY="171.0" onAction="#onGestiondesEtudiantButtonClick" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #3A4B63; -fx-text-fill: white;" text="Gestion Des Etudiants" />
+            <Button layoutX="30.0" layoutY="30.0" onAction="#onGestiondesModulesButtonClick" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #3A4B63; -fx-text-fill: white;" text="Gestion Des Modules " />
+            <Button fx:id="logoutButton1" layoutX="30.0" layoutY="136.0" onAction="#onDesconnected" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #3A4B63; -fx-text-fill: white;" text="Se deconnecter" />
+        </VBox>
+    </left>
+
+    <!-- Content Area (StackPane with Table and Form) -->
+    <center>
+        <StackPane>
+            <!-- Table View (Background) -->
+            <VBox alignment="CENTER" prefHeight="547.0" prefWidth="570.0" spacing="20.0" style="-fx-background-color: #F4F6F9; -fx-padding: 20;">
+                <TableView fx:id="ModuleTable" prefHeight="300.0" prefWidth="500.0">
+                    <columns>
+                        <TableColumn fx:id="idmodule" text="ID" prefWidth="100.0"/>
+                        <TableColumn fx:id="nomColumn" text="Nom Module" prefWidth="100.0"/>
+                        <TableColumn fx:id="Code" text="Code Module" prefWidth="100.0"/>
+                    </columns>
+                </TableView>
+
+                <!-- Buttons for Delete and Modify actions -->
+                <HBox alignment="CENTER" spacing="20">
+                    <Button fx:id="deleteButton" text="Delete" onAction="#onDeleteButtonClick" style="-fx-background-color: #FF4C4C; -fx-text-fill: white;" />
+                    <Button fx:id="modifyButton" text="Modify" onAction="#onModifyButtonClick" style="-fx-background-color: #4C92FF; -fx-text-fill: white;" />
+                    <Button fx:id="ajouteretudiant" text="Ajouter" onAction="#onAjouteEtudiant" style="-fx-background-color: #4C92FF; -fx-text-fill: white;" />
+                </HBox>
+            </VBox>
+
+            <!-- Form for Modify Action (Foreground) -->
+            <VBox fx:id="formContainer" alignment="CENTER" spacing="20" style="-fx-background-color: white; -fx-border-radius: 12px; -fx-padding: 30; -fx-pref-width: 400px; -fx-pref-height: 350px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 5); visibility: hidden;">
+                <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-padding: 5;">
+                    <Label text="ID:" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-pref-width: 100px;"/>
+                    <TextField fx:id="IdModule" style="-fx-border-radius: 5px; -fx-padding: 5; -fx-pref-width: 200px;"/>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-padding: 5;">
+                    <Label text="Nom Module:" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-pref-width: 100px;"/>
+                    <TextField fx:id="nomField" style="-fx-border-radius: 5px; -fx-padding: 5; -fx-pref-width: 200px;"/>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-padding: 5;">
+                    <Label text="Code Module:" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-pref-width: 100px;"/>
+                    <TextField fx:id="CodeM" style="-fx-border-radius: 5px; -fx-padding: 5; -fx-pref-width: 200px;"/>
+                </HBox>
+                <HBox alignment="CENTER" spacing="20" style="-fx-padding: 10;">
+                    <Button fx:id="saveButton" text="Save" onAction="#onSaveButtonClick" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-border-radius: 5px; -fx-padding: 10px 20px;"/>
+                    <Button fx:id="cancelButton" text="Cancel" onAction="#onCancelButtonClick" style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-border-radius: 5px; -fx-padding: 10px 20px;"/>
+                </HBox>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>

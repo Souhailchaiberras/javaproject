@@ -1,0 +1,141 @@
+/* General Styling */
+* {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/* Header Section */
+.top {
+    -fx-background-color: linear-gradient(to right, #2E3B4E, #4B5E7A);
+    -fx-padding: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0, 2);
+}
+.top .label {
+    -fx-text-fill: white;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+.top .image-view {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 8, 0.4, 0, 2);
+}
+
+/* Sidebar Section */
+.left {
+    -fx-background-color: linear-gradient(to bottom, #1D2A3B, #3A4B63);
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0.5, 0, 2);
+}
+.left .button {
+    -fx-background-color: #3A4B63;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0.5, 0, 1);
+    -fx-border-color: #4B5E7A;
+}
+.left .button:hover {
+    -fx-background-color: #4B5E7A;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 6, 0.5, 0, 2);
+}
+.left .button:pressed {
+    -fx-background-color: #2A3A52;
+    -fx-effect: none;
+}
+
+/* Content Area */
+.center {
+    -fx-background-color: #F4F6F9;
+    -fx-padding: 20;
+}
+.center .vbox {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 20;
+    -fx-border-color: #DDDDDD;
+    -fx-border-width: 1;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-spacing: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.5, 0, 2);
+}
+.center .label {
+    -fx-font-size: 20px;
+    -fx-text-fill: #333;
+    -fx-font-weight: bold;
+}
+
+/* ComboBox */
+.combo-box {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10;
+}
+.combo-box:hover {
+    -fx-border-color: #2196F3;
+}
+.combo-box:focused {
+    -fx-border-color: #2196F3;
+}
+
+
+
+/* Search Field */
+.text-field {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10;
+}
+.text-field:focused {
+    -fx-border-color: #2196F3;
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0.5, 0, 1);
+}
+.button:hover {
+    -fx-background-color: #45A049;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 6, 0.5, 0, 2);
+    -fx-cursor: hand;
+}
+.button:pressed {
+    -fx-background-color: #388E3C;
+    -fx-effect: none;
+}
+
+/* Generate PDF Button */
+.button#generatePdfButton {
+    -fx-background-color: #2196F3;
+}
+.button#generatePdfButton:hover {
+    -fx-background-color: #1E88E5;
+}
+.button#generatePdfButton:pressed {
+    -fx-background-color: #1976D2;
+}
+
+/* Search Button */
+.button#searchButton {
+    -fx-background-color: #2196F3;
+}
+.button#searchButton:hover {
+    -fx-background-color: #1E88E5;
+}
+.button#searchButton:pressed {
+    -fx-background-color: #1976D2;
+}

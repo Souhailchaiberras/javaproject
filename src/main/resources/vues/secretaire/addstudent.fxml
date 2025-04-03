@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.secretaire.Controller" stylesheets="@style.css">
+    <!-- Header Section -->
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="117.0" prefWidth="856.0" spacing="10.0" style="-fx-background-color: #2E3B4E; -fx-padding: 10;">
+            <ImageView fitHeight="87.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@logoensa.jpeg" />
+                </image>
+            </ImageView>
+            <Label prefHeight="35.0" prefWidth="434.0" style="-fx-text-fill: white; -fx-font-size: 24px;" text="Welcome to the Dashboard" />
+        </HBox>
+    </top>
+
+    <!-- Sidebar Section -->
+    <left>
+        <VBox alignment="TOP_LEFT" prefHeight="535.0" prefWidth="216.0" spacing="10.0" style="-fx-background-color: #1D2A3B; -fx-padding: 20;">
+            <Button onAction="#onStatistiqueButtonClick" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #3A4B63; -fx-text-fill: white;" text="Statistiques" />
+            <Button onAction="#onAjouterButtonClick" prefHeight="25.0" prefWidth="185.0" style="-fx-background-color: #3A4B63; -fx-text-fill: white;" text="Ajouter un Étudiant" />
+            <Button onAction="#onDisplaylisteofstudentButtonclick" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #3A4B63; -fx-text-fill: white;" text="Afficher Liste Étudiants" />
+            <Button onAction="#onDesconnected" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #3A4B63; -fx-text-fill: white;" text="Se Déconnecter" />
+        </VBox>
+    </left>
+
+    <!-- Content Area -->
+    <center>
+        <VBox alignment="CENTER" prefHeight="547.0" prefWidth="570.0" spacing="20.0" style="-fx-background-color: #F4F6F9; -fx-padding: 20;" >
+            <Label fx:id="formTitle" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2E3B4E;" text="Inscription d'un Étudiant" />
+
+            <!-- Form Fields -->
+            <GridPane hgap="10" vgap="10" style="-fx-background-color: #FFFFFF; -fx-border-radius: 10; -fx-padding: 15; -fx-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);" alignment="CENTER">
+                <Label text="Matricule:" style="-fx-text-fill: #3A4B63;" />
+                <TextField fx:id="matriculeField" GridPane.columnIndex="1" style="-fx-background-color: #E8F0FE; -fx-border-color: #3A4B63; -fx-border-radius: 5px;" />
+
+                <Label text="Nom:" GridPane.rowIndex="1" style="-fx-text-fill: #3A4B63;" />
+                <TextField fx:id="nomField" GridPane.columnIndex="1" GridPane.rowIndex="1" style="-fx-background-color: #E8F0FE; -fx-border-color: #3A4B63; -fx-border-radius: 5px;" />
+
+                <Label text="Prénom:" GridPane.rowIndex="2" style="-fx-text-fill: #3A4B63;" />
+                <TextField fx:id="prenomField" GridPane.columnIndex="1" GridPane.rowIndex="2" style="-fx-background-color: #E8F0FE; -fx-border-color: #3A4B63; -fx-border-radius: 5px;" />
+
+                <Label text="Date de Naissance:" GridPane.rowIndex="3" style="-fx-text-fill: #3A4B63;" />
+                <DatePicker fx:id="dateNaissancePicker" GridPane.columnIndex="1" GridPane.rowIndex="3" style="-fx-background-color: #E8F0FE; -fx-border-color: #3A4B63; -fx-border-radius: 5px;" />
+
+                <Label text="Promotion:" GridPane.rowIndex="4" style="-fx-text-fill: #3A4B63;" />
+                <TextField fx:id="promotionField" GridPane.columnIndex="1" GridPane.rowIndex="4" style="-fx-background-color: #E8F0FE; -fx-border-color: #3A4B63; -fx-border-radius: 5px;" />
+
+                <Label text="Module:" GridPane.rowIndex="5" style="-fx-text-fill: #3A4B63;" />
+                <ComboBox fx:id="moduleComboBox" GridPane.columnIndex="1" GridPane.rowIndex="5" style="-fx-background-color: #E8F0FE; -fx-border-color: #3A4B63; -fx-border-radius: 5px;" />
+            </GridPane>
+
+            <!-- Submit Button -->
+            <Button onAction="#onSubmitForm" text="Inscrire Étudiant" style="-fx-background-color: #3A4B63; -fx-text-fill: white; -fx-border-radius: 5px; -fx-font-size: 16px; -fx-padding: 10 20;" />
+        </VBox>
+    </center>
+</BorderPane>

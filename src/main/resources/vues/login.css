@@ -1,0 +1,88 @@
+/* General Styling */
+* {
+    -fx-font-family: "Arial Rounded MT Bold", sans-serif;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/* HBox Styling */
+.hbox {
+    -fx-background-color: linear-gradient(to right, #2E3B4E, #4B5E7A);
+}
+
+/* AnchorPane Styling */
+.anchor-pane {
+    -fx-background-color: transparent;
+}
+
+.anchor-pane .label {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* ImageView */
+.image-view {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 8, 0.4, 0, 2);
+}
+
+/* TextField Styling */
+.text-field,
+.password-field {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 5;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused,
+.password-field:focused {
+    -fx-border-color: #0096FF;
+    -fx-background-color: #FFFFFF;
+}
+
+/* Button Styling */
+.button {
+    -fx-background-color: #0096FF;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 6, 0.5, 0, 2);
+}
+
+.button:hover {
+    -fx-background-color: #007ACC;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0, 2);
+    -fx-cursor: hand;
+}
+
+.button:pressed {
+    -fx-background-color: #005F99;
+}
+
+/* Transparent Button (Sign-Up Link) */
+.button#buttonsignup {
+    -fx-background-color: transparent;
+    -fx-text-fill: #0096FF;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-underline: true;
+}
+
+.button#buttonsignup:hover {
+    -fx-text-fill: #005F99;
+    -fx-cursor: hand;
+}
+
+/* Prompt Text Styling */
+.text-field .text-prompt,
+.password-field .text-prompt {
+    -fx-fill: #999999;
+    -fx-font-size: 14px;
+    -fx-font-style: italic;
+}
